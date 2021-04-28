@@ -14,10 +14,10 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @NotEmpty(message = "FullName must not empty")
-    @Size(min = 5,max = 30)
+//    @Size(min = 5,max = 30)
     private String username;
     @NotEmpty(message = "Password must not empty")
-    @Size(min = 6,message = "password with 6 or more letters")
+//    @Size(min = 6,message = "password with 6 or more letters")
     private String password;
     @Email
     @NotEmpty(message = "Email must not empty")
@@ -29,7 +29,7 @@ public class User {
     public User() {
     }
 
-    public User(@NotEmpty String username, @NotEmpty String password, @Email String email, List<User_roles> listUserRole) {
+    public User(String username,String password,String email, List<User_roles> listUserRole) {
         this.username = username;
         this.password = password;
         this.email = email;

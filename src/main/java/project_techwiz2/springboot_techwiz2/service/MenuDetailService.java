@@ -11,6 +11,7 @@ public interface MenuDetailService {
     boolean saveMenu(Menu_detail menu_detail);
     boolean deleteMenu(int menu_detail_id);
     boolean updateMenu(Menu_detail menu_detail);
+    List<Menu_detail> listMenuDerailByStatus(int status);
 
     boolean checkMenuDetailName(String menuDName,int menu_id);
     Page<Menu_detail> findPaginated(int pageNo,int pageSize);

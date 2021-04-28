@@ -67,27 +67,8 @@
 
 
 
-<script data-cfasync="false" src="/assets/frontend/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-<script src="/assets/frontend/js/vendor/jquery-1.11.2.min.js"></script>
-<script src="/assets/frontend/js/vendor/bootstrap.min.js"></script>
-<script src="/assets/frontend/js/vendor/jquery.flexslider-min.js"></script>
-<script src="/assets/frontend/js/vendor/spectragram.js"></script>
-<script src="/assets/frontend/js/vendor/owl.carousel.min.js"></script>
-<script src="/assets/frontend/js/vendor/velocity.min.js"></script>
-<script src="/assets/frontend/js/vendor/velocity.ui.min.js"></script>
-<script src="/assets/frontend/js/vendor/bootstrap-datepicker.min.js"></script>
-<script src="/assets/frontend/js/vendor/bootstrap-clockpicker.min.js"></script>
-<script src="/assets/frontend/js/vendor/jquery.magnific-popup.min.js"></script>
-<script src="/assets/frontend/js/vendor/isotope.pkgd.min.js"></script>
-<script src="/assets/frontend/js/vendor/slick.min.js"></script>
-<script src="/assets/frontend/js/vendor/wow.min.js"></script>
-<script src="/assets/frontend/js/animation.js"></script>
-<script src="/assets/frontend/js/vendor/vegas/vegas.min.js"></script>
-<script src="/assets/frontend/js/vendor/jquery.mb.YTPlayer.js"></script>
-<script src="/assets/frontend/js/vendor/jquery.stellar.js"></script>
-<script src="/assets/frontend/js/main.js"></script>
-<script src="/assets/frontend/js/vendor/mc/jquery.ketchup.all.min.js"></script>
-<script src="/assets/frontend/js/vendor/mc/main.js"></script>
+<%@include file="/WEB-INF/views/layout/frontend/fileScript.jsp" %>
+
 </body>
 
 <!-- Mirrored from demo.web3canvas.com/themeforest/tomato/index_animation.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 27 Apr 2021 04:36:09 GMT -->

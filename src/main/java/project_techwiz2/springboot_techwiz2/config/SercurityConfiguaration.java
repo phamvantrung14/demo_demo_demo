@@ -42,7 +42,7 @@ public class SercurityConfiguaration extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         // TODO Auto-generated method stub
         http.csrf().disable().authorizeRequests().antMatchers(
-                "/register**","/register/**","/food/**","/api/**","/api**","/web**","/webjars/**","/assets/**","/uploadingDir/**",
+                "/register**","/register/**","/food/**","/cdn-cgi/**","/cdn-cgi**","/api/**","/api**","/web**","/webjars/**","/assets/**","/uploadingDir/**",
                 "/js/**",
                 "/css/**",
                 "/img/**").permitAll().antMatchers("/admin/**","/role/**").hasAnyAuthority("USER")

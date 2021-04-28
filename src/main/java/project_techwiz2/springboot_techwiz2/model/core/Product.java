@@ -21,6 +21,7 @@ public class Product {
     @Min(0)
     private int discount;
     @NotEmpty(message = "Description  must not empty")
+    @Lob
     private String descriptions;
     private int status;
     @Min(0)

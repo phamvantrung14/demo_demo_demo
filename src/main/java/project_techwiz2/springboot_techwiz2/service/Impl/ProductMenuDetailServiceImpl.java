@@ -2,6 +2,9 @@ package project_techwiz2.springboot_techwiz2.service.Impl;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import project_techwiz2.springboot_techwiz2.model.core.Product_menu_detail;
 import project_techwiz2.springboot_techwiz2.repository.core.ProductMenuDetailRepository;
@@ -21,6 +24,18 @@ public class ProductMenuDetailServiceImpl implements ProductMenuDetailService {
             return list;
         }catch (Exception e)
         {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    @Override
+    public List<Product_menu_detail> listProMenuDetailAll() {
+        try{
+            List<Product_menu_detail> list = productMenuDetailRepository.findAll();
+            return list;
+
+        }catch (Exception e) {
             e.printStackTrace();
         }
         return null;
@@ -88,5 +103,18 @@ public class ProductMenuDetailServiceImpl implements ProductMenuDetailService {
             e.printStackTrace();
         }
         return false;
+    }
+
+    @Override
+    public Page<Product_menu_detail> findPaginated(int pageNo, int pageSize,int menuDetail_id) {
+        Pageable pageable = PageRequest.of(pageNo-1,pageSize);
+
+        return this.productMenuDetailRepository.getProMenuByMenuPaginate(menuDetail_id,pageable);
+    }
+
+    @Override
+    public Page<Product_menu_detail> findAllPaginated(int pageNo, int pageSize) {
+        Pageable pageable = PageRequest.of(pageNo-1,pageSize);
+        return this.productMenuDetailRepository.findAll(pageable);
     }
 }

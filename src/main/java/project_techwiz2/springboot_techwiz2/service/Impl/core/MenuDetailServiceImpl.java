@@ -79,6 +79,18 @@ public class MenuDetailServiceImpl implements MenuDetailService {
     }
 
     @Override
+    public List<Menu_detail> listMenuDerailByStatus(int status) {
+        try{
+            List<Menu_detail> list = menuDetailRepository.findAllByStatus(status);
+            return list;
+        }catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    @Override
     public boolean checkMenuDetailName(String menuDName, int menu_id) {
         Menu_detail menu_detail = menuDetailRepository.findByMenuDetailName(menuDName,menu_id);
         if (menu_detail==null)

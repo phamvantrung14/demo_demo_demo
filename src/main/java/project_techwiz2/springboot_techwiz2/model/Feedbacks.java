@@ -1,9 +1,6 @@
 package project_techwiz2.springboot_techwiz2.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 import java.util.Date;
@@ -15,7 +12,6 @@ public class Feedbacks {
     private  int id;
 
     @NotEmpty(message = "fullname must not be empty")
-    @Min(1)
     private String fullname;
 
 
@@ -25,6 +21,7 @@ public class Feedbacks {
     private String phonenumber;
 
     @NotEmpty(message = "content must not be empty")
+    @Lob
     private String content;
 
     private int status;

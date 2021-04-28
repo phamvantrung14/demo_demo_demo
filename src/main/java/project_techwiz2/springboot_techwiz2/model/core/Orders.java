@@ -21,7 +21,7 @@ public class Orders {
 
     @NotEmpty(message = "phone number must not empty")
     private String phone_number;
-
+    @Column(columnDefinition="TEXT")
     private String order_note;
     private int status;
     @NotEmpty(message = "Payment  must not empty")

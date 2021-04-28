@@ -1,11 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: asuspc
-  Date: 4/27/2021
-  Time: 1:31 PM
-  To change this template use File | Settings | File Templates.
---%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <body data-scroll-animation="true">
 <!--[if lt IE 8]>
@@ -36,18 +30,18 @@
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
-                            <a href="index.html"  role="button" aria-haspopup="true" aria-expanded="false">Home</a>
+                            <a href="${pageContext.request.contextPath}/food"  role="button" aria-haspopup="true" aria-expanded="false">Home</a>
 
                         </li>
                         <li class="dropdown">
-                            <a href="index.html"  role="button" aria-haspopup="true" aria-expanded="false">Menu</a>
+                            <a href="${pageContext.request.contextPath}/food/menu"  role="button" aria-haspopup="true" aria-expanded="false">Menu</a>
 
                         </li>
                         <li class="dropdown">
-                            <a href="menu_all.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Category<span class="caret"></span></a>
+                            <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Category<span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <c:forEach var="c" items="${listCate}">
-                                <li ><a href="menu_list.html">${c.cate_name}<span class="caret-right"></span></a>
+                                <li ><a href="">${c.cate_name}<span class="caret-right"></span></a>
                                     <ul class="dropdown-menu">
                                         <c:forEach var="cd" items="${listCateDetail}">
                                             <c:if test="${c.cate_id == cd.category.cate_id}">
@@ -66,9 +60,41 @@
                                 <li><a href="reservation-ot.html">Reservation - Opentable</a></li>
                             </ul>
                         </li>
+                        <li class="dropdown" id="cartItemNav">
+                            <a class="css-pointer dropdown-toggle" href="javascript:void(0);" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-shopping-cart fsc pull-left"></i>
+                                <span class="cart-number">${listCart.size()}</span><span class="caret"></span></a>
+                            <div class="cart-content dropdown-menu" style="display: block;">
+                                <div class="cart-title">
+                                    <h4>Shopping Cart</h4>
+                                </div>
+                                <div class="cart-items" >
+                                    <c:forEach items="${listCart}" var="cart">
+                                    <div class="cart-item clearfix">
+                                        <div class="cart-item-image">
+                                            <a href="javascript:void(0);"><img style="width: 50px" src="${cart.product.image}" alt="Breakfast with coffee"></a>
+                                        </div>
+                                        <div class="cart-item-desc">
+                                            <a href="${pageContext.request.contextPath}/food/productDetail?proId=${cart.product.product_id}">${cart.product.product_name}</a>
+                                            <span class="cart-item-price">$${cart.product.price}</span>
+                                            <span class="cart-item-quantity">x ${cart.quantity}</span>
+                                            <i class="fa fa-times ci-close" onclick="deleteToCart(${cart.product.product_id})"></i>
+                                        </div>
+                                    </div>
+                                    </c:forEach>
+                                </div>
+                                <div class="cart-action clearfix">
+                                    <span class="pull-left checkout-price">$ ${tongtien}</span>
+                                    <c:if test="${listCart.size()>0}">
+                                        <a class="btn btn-default pull-right" href="${pageContext.request.contextPath}/food/cart/listCart">View Cart</a>
+                                    </c:if>
+                                </div>
+                            </div>
+                        </li>
                     </ul>
                 </div>
 
             </div>
         </nav>
+
 

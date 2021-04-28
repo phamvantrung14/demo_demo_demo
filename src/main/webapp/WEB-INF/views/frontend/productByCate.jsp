@@ -3,7 +3,16 @@
 <c:set var="pageTitle" scope="request" value="Home"/>
 <%@include file="/WEB-INF/views/layout/frontend/header.jsp" %>
 <%@include file="/WEB-INF/views/layout/frontend/navbar.jsp" %>
-
+<section class="page_header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h2 class="text-uppercase">Shop Listing</h2>
+                <p>Tomato is a delicious restaurant website template</p>
+            </div>
+        </div>
+    </div>
+</section>
 <section class="shop-content">
     <div class="container">
         <div class="row">
@@ -16,10 +25,7 @@
                         <option>Fries</option>
                         <option>Pizza</option>
                     </select>
-                    <div class="sg-list">
-                        <a href="./shop_left_sidebar.html"><i class="fa fa-th-large"></i></a>
-                        <a href="./shop_right_sidebar.html"><i class="fa fa-reorder"></i></a>
-                    </div>
+
                     <span>Showing 1-9 of 80 Results</span>
                 </div>
                 <div class="shop-products">
@@ -48,3 +54,4 @@
 
 
 <%@include file="/WEB-INF/views/layout/frontend/footer.jsp" %>
+<%@include file="/WEB-INF/views/layout/frontend/ajaxScript.jsp" %>
